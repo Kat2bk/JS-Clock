@@ -1,4 +1,4 @@
-html {
+/* html {
     background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
     background-size: cover;
     font-family: 'helvetica neue';
@@ -35,7 +35,7 @@ html {
     width: 100%;
     height: 100%;
     transform: translateY(-3px); /* account for the height of the clock hands */
-  }
+  /* }
 
   .hand {
     width: 50%;
@@ -48,3 +48,12 @@ html {
     transition: all 0.06s;
     transition-timing-function: cubic-bezier(0, 3.07, 0, 2.2)
   }
+
+  .hour-hand {
+    background-color: red;
+  } */ 
+
+  /* *, *::after, *::before {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  } */
