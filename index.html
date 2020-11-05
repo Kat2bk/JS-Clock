@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Clock</title>
+  <link rel="stylesheet" href="./style.css" >
+</head>
+
+<!-- remember to use html:5 to set up DOCTYPE -->
+
+
+<body>
+
+
+    <div class="clockDisplay"></div>
+
+    <!-- emmet abbreviation div.hand*3 -->
+    <!-- emmet -- div.number.number$*12{$}*12 -->
+    <!-- we made a class for every number on clock face -->
+
+    <!-- should i make a helper function? -->
+
+  <script type="text/javascript">
+
+    // creating a new date object
+    function showTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        let quarter = "AM";
+
+        // we want a 12 hour clock, and we don't want to display just a zero
+
+        if (hours == 0) {
+            hours = 12;
+        }
+
+        if (hours > 12) {
+            hours = hours - 12;
+            quarter = "PM";
+        }
+
+        // we want to display double digits
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        const time = hours + ":" + minutes + ":" + seconds + " " + quarter;
+        const displayTime = document.querySelector('.clockDisplay');
+        displayTime.textContent = time;
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
+    // setInterval(showTime, 1000);
+    // it takes a second to load, call the function again before setInterval
+    // The only difference between the two is setTimeout() triggers the expression only once while setInterval() keeps triggering expression regularly after the given interval of time. (unless you tell it to stop).
+
+  </script>
+
+
+</body>
+</html>
